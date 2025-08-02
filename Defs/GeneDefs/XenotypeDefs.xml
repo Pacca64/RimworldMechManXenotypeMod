@@ -3,8 +3,8 @@
   <XenotypeDef>
     <defName>PaccaMechMan_MechLord</defName>
     <label>mechlord</label>
-    <description>The Mechlord is the unnatural combination of a human and a Mechhive core. Their integrated persona core and mechlink subsystem gives them enhanced mental abilities and unmatched control over mechanoids. They also excel at building and working with technology. However, they are slow and sleepy, so they tend to rely on their mechanoids or their allies to do menial labor.</description>
-    <descriptionShort>Mechlords excel at controlling mechanoids, and are good at building and working with technology. However, they are slow and sleepy, so they often rely on their mechanoids or allies.</descriptionShort>
+    <description>The Mechlord is the unnatural combination of a human and a Mechhive core. Their integrated persona core and mechlink subsystem gives them enhanced mental abilities and unmatched control over mechanoids. They also excel at building and working with technology. However, they are slow and sleepy, so they tend to rely on their mechanoids or their allies to do menial labor. They are also weak to EMPs.</description>
+    <descriptionShort>Mechlords excel at controlling mechanoids, and are good at building and working with technology. However, they are slow and sleepy, so they often rely on their mechanoids or allies. They are also weak to EMPs.</descriptionShort>
     <iconPath>UI/Icons/Xenotypes/Dirtmole</iconPath>
     <inheritable>true</inheritable>
     <nameMaker>NamerPersonPaccaMechMan</nameMaker>
@@ -57,6 +57,149 @@
       <li>AptitudeTerrible_Animals</li>
       <li>AptitudeRemarkable_Crafting</li>
       <li>AptitudeRemarkable_Intellectual</li>
+    </genes>
+  </XenotypeDef>
+
+  <XenotypeDef>
+    <defName>PaccaMechMan_ScytheMan</defName>
+    <label>Scythman</label>
+    <description>Scythmen are heavily specialized killing machines. While they lack the titular Scythes from their forebearers, the Scythers, Scythmen are still incredibly adept at chasing down enemies and defeating them in melee combat. However, they struggle when handling ranged weapons, and become volatile if they don't get the opportunity to kill for too long. They are also weak to EMPs.</description>
+    <descriptionShort>Scythmen are fast and great in melee combat, but struggle to use ranged weapons, and become moody and volatile if they don't kill often enough. They are also weak to EMPs.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Dirtmole</iconPath>
+    <inheritable>true</inheritable>
+    <nameMaker>NamerPersonPaccaMechMan</nameMaker>
+    <nameMakerFemale>NamerPersonPaccaMechMan</nameMakerFemale>
+    <chanceToUseNameMaker>1</chanceToUseNameMaker>
+    <genes>
+      <!--Health-->
+      <li>Superclotting</li>
+      <!--Movement-->
+      <li>MoveSpeed_VeryQuick</li>
+      <!--Mood-->
+      <li>PaccaMechManBoredomResistant</li>
+      <li>PaccaMechManMechHiveConnection</li>
+      <!--Violence-->
+      <li>Aggression_HyperAggressive</li>
+      <li>MeleeDamage_Strong</li>
+      <li>KillThirst</li>
+      <!--Pain-->
+      <li>Pain_Reduced</li>
+      <!--Cosmetic-->
+      <li>Hair_BaldOnly</li>
+      <!--Body Type-->
+      <li>Body_Thin</li>
+      <!--Skin-->
+      <li>Skin_SheerWhite</li>
+      <li>PaccaMechManSkin_MechGreenishWhite</li>
+      <!--Misc-->
+      <li>Nearsighted</li>
+      <li>Unstoppable</li>
+      <li>PaccaMechManPlasteelArmor</li>
+      <li>PaccaMechManTechWoven</li>
+      <li>PaccaMechManScytherHead</li>
+      <!--Skills-->
+      <li>AptitudeTerrible_Shooting</li>
+      <li>AptitudeRemarkable_Melee</li>
+      <li>AptitudeTerrible_Cooking</li>
+      <li>AptitudeTerrible_Animals</li>
+    </genes>
+  </XenotypeDef>
+
+  <XenotypeDef>
+    <defName>PaccaMechMan_LanceMan</defName>
+    <label>Lanceman</label>
+    <description>Lancemen are half mechanoid cyborgs that are specialized in long range combat. While they struggle in melee combat, their mechanoid aim assist systems and night vision help ensure their shots land, and their integrated charge lance can potentially pick off a target in a pinch. They are also weak to EMPs.</description>
+    <descriptionShort>Lancemen struggle in melee combat, but are very effective with ranged weapons, and can fire a slowly recharging charge lance from their body. They are also weak to EMPs.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Dirtmole</iconPath>
+    <inheritable>true</inheritable>
+    <nameMaker>NamerPersonPaccaMechMan</nameMaker>
+    <nameMakerFemale>NamerPersonPaccaMechMan</nameMakerFemale>
+    <chanceToUseNameMaker>1</chanceToUseNameMaker>
+    <genes>
+      <!--Ability-->
+      <li>PaccaMechManMechSummon</li>
+      <li>PaccaMechManEmbeddedChargeLance</li>
+      <!--Mood-->
+      <li>PaccaMechManBoredomResistant</li>
+      <li>PaccaMechManMechHiveConnection</li>
+      <!--Violence-->
+      <li>Aggression_HyperAggressive</li>
+      <li>MeleeDamage_Weak</li>
+      <!--Pain-->
+      <li>Pain_Reduced</li>
+      <!--Cosmetic-->
+      <li>Hair_BaldOnly</li>
+      <!--Skin-->
+      <li>Skin_SheerWhite</li>
+      <li>PaccaMechManSkin_MechGreenishWhite</li>
+      <!--Misc-->
+      <li>DarkVision</li>
+      <li>PaccaMechManPlasteelArmor</li>
+      <li>PaccaMechManTechWoven</li>
+      <li>PaccaMechManLancerHead</li>
+      <!--Skills-->
+      <li>AptitudeRemarkable_Shooting</li>
+      <li>AptitudeTerrible_Melee</li>
+      <li>AptitudeTerrible_Mining</li>
+      <li>AptitudeTerrible_Cooking</li>
+      <li>AptitudePoor_Animals</li>
+    </genes>
+  </XenotypeDef>
+
+  <XenotypeDef>
+    <defName>PaccaMechMan_CentiMan</defName>
+    <label>Centiman</label>
+    <description>Centimen are slow, weak to EMP blasts, and struggle at many tasks, but make up for it by being nearly indestructible in combat. They are nearly immune to fire, completely unaffected by toxins, resistant to temperature swings, rarely bleed out, and that's assuming the damage even makes it past their armor. They perform better then average at both melee and ranged combat, though their slow speed can make it difficult to reposition or retreat. Many xenotypes share horror stories about how waves of Centimen have utterly eradicated colonies.</description>
+    <descriptionShort>Centimen are slow, weak to EMPs, and have difficulties performing many common chores, but are extremely robust in combat.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Dirtmole</iconPath>
+    <inheritable>true</inheritable>
+    <nameMaker>NamerPersonPaccaMechMan</nameMaker>
+    <nameMakerFemale>NamerPersonPaccaMechMan</nameMakerFemale>
+    <chanceToUseNameMaker>1</chanceToUseNameMaker>
+    <genes>
+      <!--Ability-->
+      <li>PaccaMechManMechSummon</li>
+      <!--Health-->
+      <li>Superclotting</li>
+      <!--Movement-->
+      <li>MoveSpeed_Slow</li>
+      <li>NakedSpeed</li>
+      <!--Mood-->
+      <li>PaccaMechManBoredomResistant</li>
+      <li>PaccaMechManMechHiveConnection</li>
+      <!--Temperature-->
+      <li>MaxTemp_SmallIncrease</li>  <!--heat tolerant-->
+      <li>MinTemp_SmallDecrease</li>  <!--cold tolerant-->
+      <!--Resist and Sensitive-->
+      <li>ToxResist_Total</li>
+      <li>FireResistant</li>
+      <!--Violence-->
+      <li>Aggression_HyperAggressive</li>
+      <li>MeleeDamage_Strong</li>
+      <!--Pain-->
+      <li>Robust</li>
+      <li>Pain_Reduced</li>
+      <!--Cosmetic-->
+      <li>Hair_BaldOnly</li>
+      <!--Body Type-->
+      <li>Body_Hulk</li>
+      <!--Skin-->
+      <li>Skin_SheerWhite</li>
+      <li>PaccaMechManSkin_MechGreenishWhite</li>
+      <!--Misc-->
+      <li>Unstoppable</li>
+      <li>PaccaMechManPlasteelArmor</li>
+      <li>PaccaMechManTechWoven</li>
+      <li>PaccaMechManCentipedeHead</li>
+      <!--Skills-->
+      <li>AptitudeStrong_Shooting</li>
+      <li>AptitudeStrong_Melee</li>
+      <li>AptitudePoor_Construction</li>
+      <li>AptitudeTerrible_Plants</li>
+      <li>AptitudeTerrible_Cooking</li>
+      <li>AptitudeTerrible_Animals</li>
+      <li>AptitudeTerrible_Crafting</li>
+      <li>AptitudeTerrible_Social</li>
     </genes>
   </XenotypeDef>
 </Defs>
