@@ -167,4 +167,59 @@
                 </li>
             </modExtensions>
     </GeneDef>
+
+    <GeneDef ParentName="PaccaMechManGeneHeadboneBase">
+        <defName>PaccaMechManCerebrexHead</defName>
+        <label>cerebrex head</label>
+        <description>Carriers of this gene have a massive cerebrex mechhive cluster built over their brain. While it can optimize metabolic processes, it offers no added defense and looks hideous to most people. It also gives a vulnerability to EMP abilities.</description>
+        <biostatCpx>5</biostatCpx>
+        <biostatMet>3</biostatMet>
+        <iconPath>MechMan/Things/Pawn/Humanlike/HeadAttachments/CerebrexHead/CerebrexHead_south</iconPath>
+        <displayOrderInCategory>500050</displayOrderInCategory>
+
+        <hairTagFilter>
+            <whitelist>true</whitelist>
+            <tags>
+                <li>Bald</li>
+            </tags>
+        </hairTagFilter>
+
+        <renderNodeProperties>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPath>MechMan/Things/Pawn/Humanlike/HeadAttachments/CerebrexHead/CerebrexHead</texPath>
+                <parentTagDef>Head</parentTagDef>
+                <visibleFacing>
+                    <li>North</li>
+                    <li>East</li>
+                    <li>South</li>
+                    <li>West</li>
+                </visibleFacing>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <baseLayer>60</baseLayer> <!-- It looks like bigger numbers draw on top. In this case, we REALLY want to draw on top! This value is higher then the eye layer. -->
+            </li>
+        </renderNodeProperties>
+        <statOffsets>
+            <VacuumResistance>0.10</VacuumResistance>
+        </statOffsets>
+
+        <customEffectDescriptions>
+            <li>Users of this gene will suffer from EMP Shock when hit with EMP damage, slowing them down and reducing consciousness. This effect stacks with other genes that apply EMP shock.</li>
+        </customEffectDescriptions>
+
+        <modExtensions>
+                <li Class="VEF.Genes.GeneExtension">
+                    <hediffsToBodyParts>
+                        <li>
+                            <hediff>PaccaMechManCerebrexHead</hediff>
+                            <bodyparts>
+                                <li>Head</li>
+                            </bodyparts>
+                        </li>
+                    </hediffsToBodyParts>
+                </li>
+            </modExtensions>
+    </GeneDef>
 </Defs>

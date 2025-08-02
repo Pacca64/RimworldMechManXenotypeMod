@@ -106,42 +106,6 @@
     </comps>
   </HediffDef>
 
-  <HediffDef ParentName="PaccaMechManGeneEMPShockAffected">
-    <defName>TechWoven</defName>
-    <label>techwoven</label>
-    <labelNoun>tech weave</labelNoun>
-    <description>Mechanoid technology woven through the body. It gives a variety of strange effects, but also causes vulnerability to EMP weapons.</description>
-    <stages>
-			<li>
-        <becomeVisible>false</becomeVisible>
-			</li>
-		</stages>
-  </HediffDef>
-
-  <HediffDef ParentName="PaccaMechManGeneEMPShockAffected">
-    <defName>PaccaMechManMechSignalDisruptor</defName>
-    <label>mech signal disruptor</label>
-    <labelNoun>mech signal disruptor</labelNoun>
-    <description>A gene grown mechanoid implant. It can disrupt an enemy mechanoid, but also causes vulnerability to EMP weapons.</description>
-    <stages>
-			<li>
-        <becomeVisible>false</becomeVisible>
-			</li>
-		</stages>
-  </HediffDef>
-
-  <HediffDef ParentName="PaccaMechManGeneEMPShockAffected">
-    <defName>PaccaMechManMechlinkGrowth</defName>
-    <label>mechlink growth site</label>
-    <labelNoun>mechlink growth site</labelNoun>
-    <description>A gene grown mechanoid implant. It automatically forms a mechlink in the carriers brain, but also causes vulnerability to EMP weapons.</description>
-    <stages>
-			<li>
-        <becomeVisible>false</becomeVisible>
-			</li>
-		</stages>
-  </HediffDef>
-
   <HediffDef>
 		<defName>PaccaMechManPlasteelArmor</defName>
 		<label>plasteel plating</label>
