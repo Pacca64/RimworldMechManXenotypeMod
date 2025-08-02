@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <GeneDef Name="PaccaMechManGeneBoredomBase" Abstract="True">
+    <displayCategory>Mood</displayCategory>
+    <exclusionTags>
+      <li>PaccaMechManBoredom</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <GeneDef ParentName="PaccaMechManGeneBoredomBase">
+    <defName>PaccaMechManBoredomWeak</defName>
+    <label>boredom weak</label>
+    <description>Carriers of this gene are easily bored and need more recreation then usual.</description>
+    <iconPath>MechMan/UI/Icons/Genes/BoredomWeak</iconPath>
+    <displayOrderInCategory>50000</displayOrderInCategory>
+    <statOffsets>
+      <JoyFallRateFactor>0.2</JoyFallRateFactor>
+    </statOffsets>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>2</biostatMet>
+  </GeneDef>
+
+  <GeneDef ParentName="PaccaMechManGeneBoredomBase">
+    <defName>PaccaMechManBoredomResistant</defName>
+    <label>boredom resistant</label>
+    <description>Carriers of this gene can go without recreation for twice as long as normal.</description>
+    <iconPath>MechMan/UI/Icons/Genes/BoredomResist</iconPath>
+    <displayOrderInCategory>50010</displayOrderInCategory>
+    <statOffsets>
+      <JoyFallRateFactor>-0.5</JoyFallRateFactor>
+    </statOffsets>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-2</biostatMet>
+  </GeneDef>
+
+  <GeneDef ParentName="PaccaMechManGeneBoredomBase">
+    <defName>PaccaMechManBoredomImmune</defName>
+    <label>boredom immune</label>
+    <description>Carriers of this gene almost never get bored, and thus very rarely need recreation. This makes them incredible workers, but it can make it harder to develop a social life.</description>
+    <iconPath>MechMan/UI/Icons/Genes/BoredomImmune</iconPath>
+    <displayOrderInCategory>50020</displayOrderInCategory>
+    <statOffsets>
+      <JoyFallRateFactor>-2</JoyFallRateFactor>
+    </statOffsets>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-4</biostatMet>
+  </GeneDef>
+
+  <GeneDef ParentName="PaccaMechManEMPShockBase">
+    <defName>PaccaMechManMechHiveConnection</defName>
+    <label>mechanoid hive connection</label>
+    <description>Carriers form a connection to the mechanoid hive mind. This allows them to redistribute many metabolic tasks over the network. However, this causes some discomfort, and it also causes a weakness to EMP blasts.</description>
+    <iconPath>UI/Commands/DeactivateMechanoid</iconPath>
+    <displayCategory>Mood</displayCategory>
+	<displayOrderInCategory>50030</displayOrderInCategory>
+    <biostatCpx>4</biostatCpx>
+    <biostatMet>6</biostatMet>
+    <modExtensions>
+        <li Class="VEF.Genes.GeneExtension">
+            <hediffToWholeBody>PaccaMechManMechHiveConnectionHediff</hediffToWholeBody>
+        </li>
+	</modExtensions>
+    <customEffectDescriptions>
+      <li>Mood: -15</li>
+      <li>Pain: +10%</li>
+    </customEffectDescriptions>
+  </GeneDef>
+</Defs>

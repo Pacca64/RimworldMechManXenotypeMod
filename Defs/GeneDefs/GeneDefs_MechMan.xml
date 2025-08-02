@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef Name="PaccaMechManEMPShockBase" Abstract="True">
+    <customEffectDescriptions>
+      <li>Users of this gene will suffer from EMP Shock when hit with EMP damage, slowing them down and reducing consciousness. This effect stacks with other genes that apply EMP shock.</li>
+    </customEffectDescriptions>
+  </GeneDef>
+
+  <GeneDef ParentName="PaccaMechManEMPShockBase">
+    <defName>PaccaMechManTechWoven</defName>
+    <label>tech woven</label>
+    <description>Carriers of this gene have mech tech infrastructure built into their bodies. This has a variety of minor postive effects.</description>
+    <iconPath>MechMan/UI/Icons/Genes/techwoven</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>50000</displayOrderInCategory>
+    <statOffsets>
+      <LifespanFactor>2</LifespanFactor>
+      <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+      <ComfyTemperatureMax>5</ComfyTemperatureMax>
+      <CarryingCapacity>5</CarryingCapacity>
+      <MoveSpeed>0.1</MoveSpeed>
+      <MoveSpeed>0.15</MoveSpeed>
+    </statOffsets>
+    <statFactors>
+      <MeatAmount>0.5</MeatAmount>
+    </statFactors>
+    <biostatCpx>5</biostatCpx>
+    <biostatMet>-2</biostatMet>
+    <modExtensions>
+			<li Class="VEF.Genes.GeneExtension">
+        <hediffToWholeBody>TechWoven</hediffToWholeBody>
+			</li>
+		</modExtensions>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>PaccaMechManPlasteelArmor</defName>
+    <label>plasteel plating</label>
+    <description>Carriers of this gene have plasteel plating built into their skin. This makes them more resiliant in combat (especially against sharp attacks like bullets or arrows) and less flameable, but also reduces movement speed and temperature tolerance. Their skin also releases small amounts of plasteel when harvested.</description>
+    <iconPath>MechMan/UI/Icons/Genes/plasteelarmor</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>50010</displayOrderInCategory>
+    <statOffsets>
+      <ComfyTemperatureMin>5</ComfyTemperatureMin>
+      <ComfyTemperatureMax>-5</ComfyTemperatureMax>
+      <MoveSpeed>-0.25</MoveSpeed>
+      <VacuumResistance>0.15</VacuumResistance>
+    </statOffsets>
+    <statFactors>
+      <LeatherAmount>0.05</LeatherAmount>
+      <IncomingDamageFactor>0.9</IncomingDamageFactor>
+      <Flammability>0.5</Flammability>
+    </statFactors>
+    <damageFactors>
+      <Flame>0.5</Flame>
+    </damageFactors>
+    <biostatCpx>4</biostatCpx>
+    <biostatMet>-3</biostatMet>
+    <modExtensions>
+			<li Class="VEF.Genes.GeneExtension">
+				<customLeatherThingDef>Plasteel</customLeatherThingDef>
+        <hediffToWholeBody>PaccaMechManPlasteelArmor</hediffToWholeBody>
+			</li>
+		</modExtensions>
+    <customEffectDescriptions>
+      <li>Sharp armor +14%</li>
+    </customEffectDescriptions>
+  </GeneDef>
+
+  <GeneDef ParentName="PaccaMechManEMPShockBase">
+		<defName>PaccaMechManMechLink</defName>
+		<label>mechlink growth</label>
+		<iconPath>Things/Pawn/Humanlike/Apparel/Mechlink</iconPath>
+		<description>Carriers of this gene grow a functional Mechlink implant in their brain, allowing them to become a mechanitor. However, it also causes a weakness to EMP blasts.</description>
+		<displayCategory>Ability</displayCategory>
+		<displayOrderInCategory>50010</displayOrderInCategory>
+		<biostatMet>-2</biostatMet>
+		<biostatCpx>3</biostatCpx>
+		<customEffectDescriptions>
+			<li>Removing this gene will remove ALL mechanitor based upgrades.</li>
+		</customEffectDescriptions>
+		<modExtensions>
+			<li Class="VEF.Genes.GeneExtension">
+        <hediffToWholeBody>PaccaMechManMechlinkGrowth</hediffToWholeBody>
+				<hediffsToBodyParts>
+					<li>
+						<hediff>MechlinkImplant</hediff>
+						<bodyparts>
+							<li>Brain</li>
+						</bodyparts>
+					</li>
+				</hediffsToBodyParts>
+			</li>
+		</modExtensions>
+	</GeneDef>
+
+
+  <GeneDef ParentName="PaccaMechManEMPShockBase">
+    <defName>PaccaMechManMechanitorBandwidthArchite</defName>
+    <label>mechanitor boost</label>
+    <description>Carriers of this gene have a small persona core integrated in their brain via advanced archite pathways. This grants an incredible increase in available bandwidth and improves the efficiency of controlled mechanoids when using a Mechlink and Mechanitor implants. The added brain fog makes it a bit harder to sleep though.</description>
+    <iconPath>UI/Gizmos/BandNodeTuning</iconPath>
+    <displayCategory>Archite</displayCategory>
+    <displayOrderInCategory>70000</displayOrderInCategory>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    <statFactors>
+      <WorkSpeedGlobalOffsetMech>1.5</WorkSpeedGlobalOffsetMech>
+      <MechControlGroups>2</MechControlGroups>
+      <MechBandwidth>2</MechBandwidth>
+      <MechRemoteRepairDistance>1.5</MechRemoteRepairDistance>
+      <MechFormingSpeed>1.5</MechFormingSpeed>
+      <MechRepairSpeed>1.5</MechRepairSpeed>
+      <RestRateMultiplier>0.9</RestRateMultiplier>
+    </statFactors>
+    <biostatCpx>5</biostatCpx>
+    <biostatArc>2</biostatArc>
+    <modExtensions>
+			<li Class="VEF.Genes.GeneExtension">
+        <hediffToWholeBody>TechWoven</hediffToWholeBody>
+			</li>
+		</modExtensions>
+  </GeneDef>
+</Defs>

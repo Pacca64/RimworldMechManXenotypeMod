@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <GeneDef Name="PaccaMechManGeneHeadboneBase" Abstract="True">
+        <endogeneCategory>Headbone</endogeneCategory>
+        <!--displayCategory>Cosmetic</displayCategory-->
+        <beardTagFilter>
+            <whitelist>true</whitelist>
+            <tags>
+                <li>NoBeard</li>
+            </tags>
+        </beardTagFilter>
+        <statOffsets>
+            <PawnBeauty>-3</PawnBeauty>
+        </statOffsets>
+        <statFactors>
+            <ArrestSuccessChance>1.5</ArrestSuccessChance>
+        </statFactors>
+        <exclusionTags>
+            <li>PaccaMechMan_MechHeads</li>
+        </exclusionTags>
+    </GeneDef>
+
+    <GeneDef ParentName="PaccaMechManGeneHeadboneBase">
+        <defName>PaccaMechManCentipedeHead</defName>
+        <label>centipede head</label>
+        <description>Carriers of this gene have a centipede mechanoids' headpiece. It offers some protection, but most people find it terrifying.</description>
+        <biostatCpx>3</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <iconPath>MechMan/Things/Pawn/Humanlike/HeadAttachments/CentipedeHead/CentipedeHead_south</iconPath>
+        <displayOrderInCategory>500000</displayOrderInCategory>
+        <renderNodeProperties>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPath>MechMan/Things/Pawn/Humanlike/HeadAttachments/CentipedeHead/CentipedeHead</texPath>
+                <parentTagDef>Head</parentTagDef>
+                <visibleFacing>
+                    <li>East</li>
+                    <li>South</li>
+                    <li>West</li>
+                </visibleFacing>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <baseLayer>60</baseLayer> <!-- It looks like bigger numbers draw on top. In this case, we REALLY want to draw on top! This value is higher then the eye layer. -->
+            </li>
+        </renderNodeProperties>
+        <statOffsets>
+            <VacuumResistance>0.25</VacuumResistance>
+        </statOffsets>
+
+        <customEffectDescriptions>
+            <li>Head Sharp armor +14%</li>
+            <li>Head Blunt armor +5%</li>
+            <li>Head Heat armor +100%</li>
+        </customEffectDescriptions>
+
+        <modExtensions>
+                <li Class="VEF.Genes.GeneExtension">
+                    <hediffsToBodyParts>
+                        <li>
+                            <hediff>PaccaMechManHeadCentipede</hediff>
+                            <bodyparts>
+                                <li>Head</li>
+                            </bodyparts>
+                        </li>
+                    </hediffsToBodyParts>
+                </li>
+            </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="PaccaMechManGeneHeadboneBase">
+        <defName>PaccaMechManScytherHead</defName>
+        <label>scyther head</label>
+        <description>Carriers of this gene have a scyther mechanoids' headpiece. It offers a little protection, but most people find it terrifying.</description>
+        <biostatCpx>3</biostatCpx>
+        <iconPath>MechMan/Things/Pawn/Humanlike/HeadAttachments/ScytherHead/ScytherHead_south</iconPath>
+        <displayOrderInCategory>500050</displayOrderInCategory>
+        <renderNodeProperties>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPath>MechMan/Things/Pawn/Humanlike/HeadAttachments/ScytherHead/ScytherHead</texPath>
+                <parentTagDef>Head</parentTagDef>
+                <visibleFacing>
+                    <li>East</li>
+                    <li>South</li>
+                    <li>West</li>
+                </visibleFacing>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <baseLayer>60</baseLayer> <!-- It looks like bigger numbers draw on top. In this case, we REALLY want to draw on top! This value is higher then the eye layer. -->
+            </li>
+        </renderNodeProperties>
+        <statOffsets>
+            <VacuumResistance>0.10</VacuumResistance>
+        </statOffsets>
+
+        <customEffectDescriptions>
+            <li>Head Sharp armor +7%</li>
+            <li>Head Blunt armor +3%</li>
+            <li>Head Heat armor +25%</li>
+        </customEffectDescriptions>
+
+        <modExtensions>
+                <li Class="VEF.Genes.GeneExtension">
+                    <hediffsToBodyParts>
+                        <li>
+                            <hediff>PaccaMechManHeadScyther</hediff>
+                            <bodyparts>
+                                <li>Head</li>
+                            </bodyparts>
+                        </li>
+                    </hediffsToBodyParts>
+                </li>
+            </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="PaccaMechManGeneHeadboneBase">
+        <defName>PaccaMechManLancerHead</defName>
+        <label>lancer head</label>
+        <description>Carriers of this gene have a lancer mechanoids' headpiece. It doesn't offer much extra protection, but its' advanced targeting system improves accuracy at long ranges. However, most people find it terrifying.</description>
+        <biostatCpx>3</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <iconPath>MechMan/Things/Pawn/Humanlike/HeadAttachments/LancerHead/LancerHead_south</iconPath>
+        <displayOrderInCategory>500100</displayOrderInCategory>
+        <renderNodeProperties>
+            <li>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPath>MechMan/Things/Pawn/Humanlike/HeadAttachments/LancerHead/LancerHead</texPath>
+                <parentTagDef>Head</parentTagDef>
+                <visibleFacing>
+                    <li>East</li>
+                    <li>South</li>
+                    <li>West</li>
+                </visibleFacing>
+                <useRottenColor>true</useRottenColor>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <baseLayer>60</baseLayer> <!-- It looks like bigger numbers draw on top. In this case, we REALLY want to draw on top! This value is higher then the eye layer. -->
+            </li>
+        </renderNodeProperties>
+        <statOffsets>
+            <VacuumResistance>0.15</VacuumResistance>
+        </statOffsets>
+        <statFactors>
+            <ShootingAccuracyFactor_Long>1.50</ShootingAccuracyFactor_Long>
+            <ShootingAccuracyFactor_Medium>1.25</ShootingAccuracyFactor_Medium>
+        </statFactors>
+
+        <customEffectDescriptions>
+            <li>Head Sharp armor +4%</li>
+            <li>Head Blunt armor +2%</li>
+            <li>Head Heat armor +13%</li>
+        </customEffectDescriptions>
+
+        <modExtensions>
+                <li Class="VEF.Genes.GeneExtension">
+                    <hediffsToBodyParts>
+                        <li>
+                            <hediff>PaccaMechManHeadLancer</hediff>
+                            <bodyparts>
+                                <li>Head</li>
+                            </bodyparts>
+                        </li>
+                    </hediffsToBodyParts>
+                </li>
+            </modExtensions>
+    </GeneDef>
+</Defs>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>PaccaMechManSkin_MechGreenishWhite</defName>
+    <label>mech tinted skin</label>
+    <labelShortAdj>mech skin</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a faded greenish white, a color commonly seen in battle hardened mechanoid shells.</description>
+    <skinColorOverride>(212, 217, 196)</skinColorOverride>
+    <displayOrderInCategory>500000</displayOrderInCategory>
+  </GeneDef>
+</Defs>

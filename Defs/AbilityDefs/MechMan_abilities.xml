@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <AbilityDef>
+        <defName>PaccaMechMan_AbilityFireChargeLance</defName>
+        <label>fire embedded charge lance</label>
+        <description>Fires a shot from the embedded charge lance. It takes way longer to recharge then a normal charge lance.</description>
+        <iconPath>Things/Item/Equipment/WeaponRanged/ChargeLance</iconPath>
+        <aiCanUse>true</aiCanUse>
+        <cooldownTicksRange>60000</cooldownTicksRange> <!-- 24 hours -->
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <!--defaultProjectile>Bullet_ChargeLance</defaultProjectile-->
+            <warmupTime>1.7</warmupTime>
+            <range>32.9</range>
+            <soundCast>ChargeLance_Fire</soundCast>
+            <soundCastTail>GunTail_Heavy</soundCastTail>
+            <!--muzzleFlashScale>9</muzzleFlashScale-->
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+            <projectileDef>Bullet_ChargeLance</projectileDef>
+            </li>
+        </comps>
+    </AbilityDef>
+</Defs>

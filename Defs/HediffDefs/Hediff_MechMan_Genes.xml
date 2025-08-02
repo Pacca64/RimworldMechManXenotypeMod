@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Effect applied when MechTech gene implants are hit by EMPs -->
+  <HediffDef ParentName="DiseaseBase">
+    <defName>MechManEMPShock</defName>
+    <label>emp shock</label>
+    <labelNoun>an emp shock</labelNoun>
+    <description>After-effects of an electrical shock to mech tech body parts. This is generally caused by feedback from EMP pulses. It lasts longer and gets more severe if multiple EMPs occur. It usually wears off in about a day or two.</description>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <initialSeverity>0.25</initialSeverity>
+		<maxSeverity>8.0</maxSeverity>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>recovering</label>
+        <painOffset>0.1</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.9</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.9</postFactor>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>rebooting</label>
+        <minSeverity>0.4</minSeverity>
+        <painOffset>0.3</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.7</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.7</postFactor>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>major</label>
+        <minSeverity>0.8</minSeverity>
+        <painOffset>0.4</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.5</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.5</postFactor>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <postFactor>0.8</postFactor>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>overwhelming</label>
+        <minSeverity>5</minSeverity>
+        <painOffset>0.5</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <postFactor>0.4</postFactor>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <postFactor>0.5</postFactor>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <postFactor>0.5</postFactor>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- For Gene based technological implants that cannot be freely installed or uninstalled -->
+  <HediffDef Name="PaccaMechManGeneImplantHediffBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <priceImpact>false</priceImpact>
+    <countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+    <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+  </HediffDef>
+
+  <!-- For Gene based technological implants that apply EMP shock when hit by EMP -->
+  <HediffDef Name="PaccaMechManGeneEMPShockAffected" Abstract="True" ParentName="PaccaMechManGeneImplantHediffBase">
+    <comps>
+      <li Class="HediffCompProperties_ReactOnDamage">
+        <damageDefIncoming>EMP</damageDefIncoming>
+        <createHediff>MechManEMPShock</createHediff>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="PaccaMechManGeneEMPShockAffected">
+    <defName>TechWoven</defName>
+    <label>techwoven</label>
+    <labelNoun>tech weave</labelNoun>
+    <description>Mechanoid technology woven through the body. It gives a variety of strange effects, but also causes vulnerability to EMP weapons.</description>
+    <stages>
+			<li>
+        <becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+  </HediffDef>
+
+  <HediffDef ParentName="PaccaMechManGeneEMPShockAffected">
+    <defName>PaccaMechManMechSignalDisruptor</defName>
+    <label>mech signal disruptor</label>
+    <labelNoun>mech signal disruptor</labelNoun>
+    <description>A gene grown mechanoid implant. It can disrupt an enemy mechanoid, but also causes vulnerability to EMP weapons.</description>
+    <stages>
+			<li>
+        <becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+  </HediffDef>
+
+  <HediffDef ParentName="PaccaMechManGeneEMPShockAffected">
+    <defName>PaccaMechManMechlinkGrowth</defName>
+    <label>mechlink growth site</label>
+    <labelNoun>mechlink growth site</labelNoun>
+    <description>A gene grown mechanoid implant. It automatically forms a mechlink in the carriers brain, but also causes vulnerability to EMP weapons.</description>
+    <stages>
+			<li>
+        <becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+  </HediffDef>
+
+  <HediffDef>
+		<defName>PaccaMechManPlasteelArmor</defName>
+		<label>plasteel plating</label>
+		<description>Plasteel plating built into the skin via the plasteel skin gene. Among its' other effects, it also reduces damage from sharp attacks, like arrows or bullets.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<statOffsets>
+					<ArmorRating_Sharp>0.14</ArmorRating_Sharp>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+  <HediffDef ParentName="PaccaMechManGeneEMPShockAffected">
+    <defName>PaccaMechManMechHiveConnectionHediff</defName>
+    <label>mech hive connection</label>
+    <labelNoun>mech hive connection</labelNoun>
+    <description>A gene grown mechanoid implant. It redistributes some metabolic tasks to the mechanoid network, but this causes discomfort while the mechanoid hive is active. It also causes vulnerability to EMP weapons.</description>
+    <comps>
+      <li Class="HediffCompProperties_ThoughtSetter">
+        <thought>PaccaMechManMechHiveConnection</thought>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painOffset>0.1</painOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="PaccaMechManGeneImplantHediffBase">
+    <defName>PaccaMechManHeadCentipede</defName>
+    <label>centipede head</label>
+    <labelNoun>centipede head</labelNoun>
+    <description>A centipede shell formed around the head of centipede head gene carrier. Adds some additional armor around the head and face.</description>
+    <stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<statOffsets>
+					<ArmorRating_Sharp>0.14</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+					<ArmorRating_Heat>1.00</ArmorRating_Heat>
+				</statOffsets>
+			</li>
+		</stages>
+  </HediffDef>
+
+  <HediffDef ParentName="PaccaMechManGeneImplantHediffBase">
+    <defName>PaccaMechManHeadScyther</defName>
+    <label>scyther head</label>
+    <labelNoun>scyther head</labelNoun>
+    <description>A scyther shell formed around the head of scyther head gene carrier. Adds some additional armor around the head and face.</description>
+    <stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<statOffsets>
+					<ArmorRating_Sharp>0.07</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.03</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.25</ArmorRating_Heat>
+				</statOffsets>
+			</li>
+		</stages>
+  </HediffDef>
+
+  <HediffDef ParentName="PaccaMechManGeneImplantHediffBase">
+    <defName>PaccaMechManHeadLancer</defName>
+    <label>lancer head</label>
+    <labelNoun>lancer head</labelNoun>
+    <description>A lancer shell formed around the head of lancer head gene carrier. Adds some additional armor around the head and face.</description>
+    <stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<statOffsets>
+					<ArmorRating_Sharp>0.04</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.02</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.13</ArmorRating_Heat>
+				</statOffsets>
+			</li>
+		</stages>
+  </HediffDef>
+
+
+</Defs>
+

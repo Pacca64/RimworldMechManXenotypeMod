@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThoughtDef>
+    <defName>PaccaMechManMechHiveConnection</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>mech hive connection</label>
+        <description>The pain... the ceaseless hatred... The mechs want us all dead. It's so horrible.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>PaccaMechManMechHiveConnectionFreed</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>mech hive connection</label>
+        <description>It's... It's over. The pain is gone. I'm free.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

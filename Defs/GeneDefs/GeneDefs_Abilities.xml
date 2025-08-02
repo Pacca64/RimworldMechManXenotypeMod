@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef ParentName="PaccaMechManEMPShockBase">
+    <defName>PaccaMechManMechShutdown</defName>
+    <label>mech shutdown</label>
+    <description>Carriers form a mech tech signal disrupter that can be used to corrupt enemy mechanoids connection to the mech hive, shutting them down instantly. However, it also causes a weakness to EMP blasts.</description>
+    <iconPath>UI/Commands/DeactivateMechanoid</iconPath>
+    <displayCategory>Ability</displayCategory>
+		<displayOrderInCategory>50000</displayOrderInCategory>
+    <abilities>
+      <li>DeactivateMechanoid</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>DeactivateMechanoid</AbilityDef>
+    </descriptionHyperlinks>
+    <biostatCpx>3</biostatCpx>
+    <biostatMet>-3</biostatMet>
+    <modExtensions>
+			<li Class="VEF.Genes.GeneExtension">
+        <hediffToWholeBody>PaccaMechManMechSignalDisruptor</hediffToWholeBody>
+			</li>
+		</modExtensions>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>PaccaMechManMechSummon</defName>
+    <label>summon mechanoids</label>
+    <description>Carriers can use their connection to the mech hive to summon "reinforcements". The mechanoids that are summoned will still attack carriers if given the chance.</description>
+    <displayCategory>Ability</displayCategory>
+		<displayOrderInCategory>50020</displayOrderInCategory>
+    <iconPath>UI/Commands/CallMechanoids</iconPath>
+    <prerequisite>PaccaMechManMechHiveConnection</prerequisite>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <abilities>
+      <li>CallMechanoids</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>CallMechanoids</AbilityDef>
+    </descriptionHyperlinks>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>PaccaMechManEmbeddedChargeLance</defName>
+    <label>charge lance</label>
+    <description>Carriers grow an embedded charge lance in their body that can be fired at will. However, it takes far more time to charge then a normal charge lance.</description>
+    <displayCategory>Ability</displayCategory>
+	<displayOrderInCategory>50030</displayOrderInCategory>
+    <iconPath>Things/Item/Equipment/WeaponRanged/ChargeLance</iconPath>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-3</biostatMet>
+    <abilities>
+      <li>PaccaMechMan_AbilityFireChargeLance</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>PaccaMechMan_AbilityFireChargeLance</AbilityDef>
+    </descriptionHyperlinks>
+  </GeneDef>
+</Defs>
