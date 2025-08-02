@@ -6,7 +6,7 @@
         <description>Fires a shot from the embedded charge lance. It takes way longer to recharge then a normal charge lance.</description>
         <iconPath>Things/Item/Equipment/WeaponRanged/ChargeLance</iconPath>
         <aiCanUse>true</aiCanUse>
-        <cooldownTicksRange>60000</cooldownTicksRange> <!-- 24 hours -->
+        <cooldownTicksRange>30000</cooldownTicksRange> <!-- 12 hours -->
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
             <hasStandardCommand>true</hasStandardCommand>
