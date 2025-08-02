@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <RulePackDef>
+    <defName>NamerPersonPaccaMechMan</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[firstName] [lastName]</li>
+        <li>r_name->[firstName] '[nickName]' [lastName]</li>
+
+        <li>maybeHyphen(p=4)-></li>
+        <li>maybeHyphen->-</li>
+
+        <li>firstName(p=1)->[SylP][nameEnd]</li>
+        <li>firstName(p=3)->[SylP][nameEnd]</li>
+
+        <li>nickName->[nicknameMechMan]</li>
+
+        <li>lastName(p=3)->[lastGenerated]</li>
+        <li>lastGenerated->[SylP][nameEnd]</li>
+        <li>lastGenerated->[SylP][maybeHyphen][SylP][nameEnd]</li>
+
+        <li>nameEnd->oid</li>
+        <li>nameEnd->ter</li>
+        <li>nameEnd->sor</li>
+        <li>nameEnd->tal</li>
+        <li>nameEnd->tel</li>
+        <li>nameEnd->ive</li>
+        <li>nameEnd->noi</li>
+        <li>nameEnd->ver</li>
+        <li>nameEnd->mek</li>
+        <li>nameEnd->itor</li>
+        <li>nameEnd->able</li>
+        <li>nameEnd->gram</li>
+        <li>nameEnd->ware</li>
+        <li>nameEnd->sole</li>
+        <li>nameEnd->uter</li>
+        <li>nameEnd->teel</li>
+        <li>nameEnd->whir</li>
+        <li>nameEnd->nit</li>
+
+      </rulesStrings>
+      <rulesFiles>
+        <li>SylP->WordParts/Syllables_MechMan</li>
+        <li>nicknameMechMan->Names/Nick_Unisex_MechMan</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>
